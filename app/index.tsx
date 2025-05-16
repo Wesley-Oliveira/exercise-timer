@@ -1,6 +1,7 @@
-import { View, Text, TextInput, Pressable, KeyboardAvoidingView, Platform } from "react-native";
+import { View, Text, TextInput, Pressable, KeyboardAvoidingView, Platform , Image } from "react-native";
 import { useState } from "react";
 import { useRouter } from "expo-router";
+
 
 export default function Home() {
   const [execTime, setExecTime] = useState("30");
@@ -19,8 +20,14 @@ export default function Home() {
       className="flex-1 justify-center items-center bg-zinc-950 px-6"
       behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
+      <Image
+        source={require("../assets/logo.png")}
+        style={{ width: 300, height: 300, resizeMode: "contain" }}
+        className="mb-6"
+      />
+
       <Text className="text-3xl font-bold text-yellow-400 mb-6">
-        Timer de Exercícios
+        Timer Team Fighter
       </Text>
 
       <View className="w-full space-y-4">

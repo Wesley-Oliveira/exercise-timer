@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "exercise-timer",
+    "name": "Exercise Timer",
     "slug": "exercise-timer",
     "version": "1.0.0",
     "scheme": "exercise-timer",
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "plugins": [
       "expo-router",
@@ -21,7 +21,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -35,6 +35,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "package": "com.wesleyoliveira.exercisetimer"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "2a6fcaa1-5c27-4cf1-913d-adce879daa09"
       }
     }
   }

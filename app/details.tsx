@@ -41,6 +41,10 @@ export default function Details() {
   };
 
   useEffect(() => {
+    playSound("exec");
+  }, []);
+
+  useEffect(() => {
     if (!isRunning) return;
 
     intervalRef.current = setInterval(() => {
