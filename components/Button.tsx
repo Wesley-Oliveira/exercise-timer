@@ -1,24 +1,12 @@
-import { forwardRef } from 'react';
-import { Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
+import { Text, Pressable } from "react-native";
 
-type ButtonProps = {
-  title: string;
-} & TouchableOpacityProps;
-
-export const Button = forwardRef<View, ButtonProps>(({ title, ...touchableProps }, ref) => {
+export function Button({ onPress, children }: { onPress: () => void; children: React.ReactNode }) {
   return (
-    <TouchableOpacity
-      ref={ref}
-      {...touchableProps}
-      className={`${styles.button} ${touchableProps.className}`}>
-      <Text className={styles.buttonText}>{title}</Text>
-    </TouchableOpacity>
+    <Pressable
+      onPress={onPress}
+      className="bg-blue-600 p-3 rounded w-full items-center"
+    >
+      <Text className="text-white font-semibold text-lg">{children}</Text>
+    </Pressable>
   );
-});
-
-Button.displayName = 'Button';
-
-const styles = {
-  button: 'items-center bg-indigo-500 rounded-[28px] shadow-md p-4',
-  buttonText: 'text-white text-lg font-semibold text-center',
-};
+}
